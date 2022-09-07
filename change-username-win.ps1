@@ -1,25 +1,26 @@
-﻿
+
 ##SCRIPT  change username
 
 
 function ChangeUsername($oldname,$newname){
     
-    #static
-    #$oldname='user test'
-    #$newname='user.test'
-
-
+    
     #Step:  Get SID for user
     $mysid = get-localuser -Name $oldname | select sid
     #check if exists
     if (!$mysid) {
+      Write-Host "Break Out! No user found"
       exit
-      }
+    } 
+    else{
+      Write-Host "Breakout wasn't defined..."
+    }
+
     $regstring = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\' + $mysid.sid.value
     $new_user_dir = ‘C:\Users\’ + $newname
     $old_user_dir = ‘C:\Users\’ + $oldname
 
-
+    
 
     #Step:  change name
     Rename-LocalUser -Name $oldname -NewName $newname
