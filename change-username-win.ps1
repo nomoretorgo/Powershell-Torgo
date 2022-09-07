@@ -5,8 +5,8 @@
 function ChangeUsername {
     
     #static
-    $oldname='max test'
-    $newname='max.test'
+    $oldname='max test2'
+    $newname='max.test2'
 
 
     
