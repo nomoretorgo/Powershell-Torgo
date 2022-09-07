@@ -2,16 +2,8 @@
 ##SCRIPT  change username
 
 
-function ChangeUsername{
-    Param (
-        [Parameter (Mandatory = $true)]
-        [string] $oldname,
-        [Parameter (Mandatory = $true)]
-        [string] $newname
-    )
-
-
-
+function ChangeUsername($oldname,$newname){
+    
     #static
     #$oldname='user test'
     #$newname='user.test'
