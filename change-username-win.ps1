@@ -13,8 +13,8 @@ function ChangeUsername{
 
 
     #static
-    $oldname='max test'
-    $newname='max.test'
+    #$oldname='user test'
+    #$newname='user.test'
 
 
     #Step:  Get SID for user
