@@ -11,6 +11,10 @@ function ChangeUsername($oldname,$newname){
 
     #Step:  Get SID for user
     $mysid = get-localuser -Name $oldname | select sid
+    #check if exists
+    if (!$mysid) {
+      exit
+      }
     $regstring = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\' + $mysid.sid.value
     $new_user_dir = ‘C:\Users\’ + $newname
     $old_user_dir = ‘C:\Users\’ + $oldname
