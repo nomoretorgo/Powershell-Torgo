@@ -26,7 +26,7 @@ function ChangeUsername($oldname,$newname){
     Rename-LocalUser -Name $oldname -NewName $newname
 
     $ACL = Get-Acl  $old_user_dir
-    $ACL_Rule = new-object System.Security.AccessControl.FileSystemAccessRule ('installadmin', "FullControl",”Allow”)
+    $ACL_Rule = new-object System.Security.AccessControl.FileSystemAccessRule ('installadmin', "FullControl","Allow")
     $ACL.SetAccessRule($ACL_Rule)
     Set-Acl -Path $old_user_dir -AclObject $ACL 
 
