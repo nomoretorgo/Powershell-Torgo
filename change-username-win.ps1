@@ -2,8 +2,13 @@
 ##SCRIPT  change username
 
 
-function ChangeUsername($oldname,$newname){
+function ChangeUsername {
     
+    #static
+    $oldname='max test'
+    $newname='max.test'
+
+
     
     #Step:  Get SID for user
     $mysid = get-localuser -Name $oldname | select sid
